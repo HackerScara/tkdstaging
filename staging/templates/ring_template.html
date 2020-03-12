@@ -1,0 +1,20 @@
+<style>
+    .ring {
+    border-style:solid;
+    border-color:#287EC7;
+</style>
+{% if rings %}
+<div class="main">
+    {% for ring in rings %}
+    <div class="ring">
+        {{ ring.ring }}<br/>
+        {{ ring.age }}<br/>
+        {{ ring.rank }}<br/>
+        {{ ring.sex }}<br/>
+        {{ ring.type }}<br/>
+    </div>
+    {% endfor %}
+</div>
+{% else %}
+<p>No Rings are available.</p>
+{% endif %}
