@@ -1,13 +1,28 @@
 <style>
+    .main {
+        display:flex;
+        flex-direction: column;
+    }
     .ring {
     border-style:solid;
     border-color:#287EC7;
+    position: relative;
+    }
+    .background {
+   position: absolute;
+   top: 0;
+   left: 0;
+   bottom: 0;
+   right: 0;
+   z-index: -1;
+   overflow: hidden;
+}
 </style>
 {% if rings %}
 <div class="main">
     {% for ring in rings %}
     <div class="ring">
-        {{ ring.ring }}<br/>
+        <div >{{ ring.ring }}</div>
         {{ ring.age }}<br/>
         {{ ring.rank }}<br/>
         {{ ring.sex }}<br/>
