@@ -1,35 +1,42 @@
-<style>
-    .main {
-        display:flex;
-        flex-direction: column;
-    }
-    .ring {
-    border-style:solid;
-    border-color:#287EC7;
-    position: relative;
-    }
-    .background {
-   position: absolute;
-   top: 0;
-   left: 0;
-   bottom: 0;
-   right: 0;
-   z-index: -1;
-   overflow: hidden;
+<head>
+    <style>
+table {
+  border-collapse: collapse;
+  width: 100%;
 }
+
+th, td {
+  text-align: left;
+  padding: 8px;
+}
+
+tr:nth-child(even) {background-color: #f2f2f2;}
 </style>
-{% if rings %}
-<div class="main">
-    {% for ring in rings %}
-    <div class="ring">
-        <div >{{ ring.ring }}</div>
-        {{ ring.age }}<br/>
-        {{ ring.rank }}<br/>
-        {{ ring.sex }}<br/>
-        {{ ring.type }}<br/>
-    </div>
-    {% endfor %}
-</div>
-{% else %}
-<p>No Rings are available.</p>
-{% endif %}
+</head>
+<body>
+
+<h2>Active Rings</h2>
+
+<table>
+    <tr>
+        <th>Ring</th>
+        <th>Age</th>
+        <th>Rank</th>
+        <th>Gender</th>
+        <th>Type</th>
+    </tr>
+    {% if rings %}
+        {% for ring in rings %}
+        <tr>
+            <td>{{ ring.ring }}</td>
+    <td>{{ ring.age }}</td>>
+    <td> {{ ring.rank }}</td>>
+    <td>  {{ ring.sex }}</td>>
+    <td>  {{ ring.type }}</td>>
+    </tr>
+        {% endfor %}
+    {% endif %}
+
+</table>
+
+</body>
